@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do-App</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="{% url 'tarefas:list' %}" class="navbar-brand d-flex align-items-center">
+                <strong>To-Do-App</strong>
+            </a>
+        </div>
+    </div>
+
+</head>
+<body>
+
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Minhas Tarefas</h1>
+            <p class="lead text-muted">Aplicativo para cadastro de tarefas</p>
+            <p>
+                <a href="{% url 'tarefas:inserir' %}" class="btn btn-primary my-2">Inserir Tarefa</a>
+            </p>
+        </div>
+    </section>
+
+
+
+
+</main>
+
+{% block content %}{% endblock %}
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Ir para o topo</a>
+        </p>
+        <p>Atividade realizada para avaliação do mini curso de Django e Django Rest Api</p>
+        <p>Deseja ver o projeto na íntegra? <a href="https://github.com/">Visite o repositório.</a></p></p>
+    </div>
+</footer>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

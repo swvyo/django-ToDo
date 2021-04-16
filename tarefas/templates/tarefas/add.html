@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do-App</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="{% url 'tarefas:list' %}" class="navbar-brand d-flex align-items-center">
+                <strong>To-Do-App</strong>
+            </a>
+        </div>
+    </div>
+</head>
+
+<body>
+
+<main role="main" class="container">
+
+    <div class="container">
+        <form method=POST>
+            {% csrf_token %}
+
+            <label class="h4">Título</label>
+            <input type="text" class="form-control" {{ form.titulo }}
+
+            <label class="h4">Descrição</label>
+            <input type="text" class="form-control" {{ form.conteudo }}
+
+            <label class="h4">Status</label>
+            <select type="text" class="form-control" {{ form.status }}
+
+            <a href="{% url 'tarefas:inserir' %}" class="btn btn-primary my-2">
+                <button style="border:0; background-color: transparent; color:white">Adicionar Tarefa</button>
+            </a>
+        </form>
+
+    </div>
+
+</main>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
